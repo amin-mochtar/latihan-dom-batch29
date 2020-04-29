@@ -1,8 +1,10 @@
 <html>
-  <head>
+
+<head>
     <title>Contoh Webpage Standard</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- 
         Dengan menggunakan bantuan DOM ubahlah document berikut 
         dengan ketentuan berikut:
@@ -20,6 +22,27 @@
     <div class="page-box">Page Box 6</div>
     <script>
         // your code here
+        var pageTitle = document.getElementById('page-title')
+        var pageBoxElements = document.getElementsByClassName('page-box')
+        var pageHeadings = document.getElementsByTagName('h1')
+
+        // setter 
+        pageTitle.innerHTML = "<i>HELLO WORLD</i>"
+
+        for (i = 0; i < pageBoxElements.length; i++) {
+            pageBoxElements[i].innerHTML = pageBoxElements[i].innerHTML.toUpperCase();
+            if (i % 2 === 0) {
+                pageBoxElements[i].style.backgroundColor = 'blue'
+            } else {
+                pageBoxElements[i].style.backgroundColor = 'green'
+            }
+        }
+
+        for (i = 0; i < pageHeadings.length; i++) {
+            pageHeadings[i].innerHTML = pageHeadings[i].innerHTML.toUpperCase()
+            pageHeadings[i].style.backgroundColor = 'orange'
+        }
     </script>
-  </body>
+</body>
+
 </html>
